@@ -55,10 +55,12 @@ public class MatrixVectorMultiplication {
       // Verify results equality
       boolean resultsMatch = Arrays.equals(sequentialResult, parallelResult);
 
-      System.out.println("Generation time: " + (end - start) / 1000000.0 + " ms");
-      System.out.println("Sequential time: " + sequentialTime + " ms");
-      System.out.println("Parallel time: " + parallelTime + " ms");
-      System.out.println("Results match: " + resultsMatch);
+      if (resultsMatch) {
+         System.out.println("Generation time: " + (end - start) / 1000000.0 + " ms");
+         System.out.println("Results are match to each other");
+         System.out.println("Sequential processing time: " + sequentialTime + " ms");
+         System.out.println("Parallel processing time: " + parallelTime + " ms");
+      }
    }
 
    /**
@@ -78,8 +80,7 @@ public class MatrixVectorMultiplication {
       for (int i = 0; i < rows; i++) {
          double sum = 0.0;
 
-         // Iterate over each element in the row and column and compute the dot
-         // product
+         // Iterate over each element in the row and column and compute the dot product
          for (int j = 0; j < cols; j++) {
             // Compute the dot product of the current row and column
             sum += matrix[i][j] * vector[j];
