@@ -7,7 +7,7 @@ public class PerformanceTest {
    }
 
    private static void summaryStatisticsTest() {
-      final int ITERATIONS = 100_000_000;
+      final int ITERATIONS = 500_000_000;
       SummaryStatistics stats = new SummaryStatistics();
       long start_time = System.currentTimeMillis();
 
